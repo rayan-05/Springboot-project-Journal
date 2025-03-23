@@ -1,9 +1,9 @@
 package com.rayanmitra.journalApp.controller;
 
+
 import com.rayanmitra.journalApp.entity.JournalEntry;
 import com.rayanmitra.journalApp.entity.User;
 import com.rayanmitra.journalApp.repository.UserRepository;
-import com.rayanmitra.journalApp.service.JournalEntryService;
 import com.rayanmitra.journalApp.service.UserService;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,13 +13,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
-
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/public")
+public class PublicController {
 
     @Autowired
     private UserService userService;
@@ -27,29 +23,25 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-
-    @GetMapping
-    public List<User> getAllUsers(){
-        return userService.getAll();
+    @GetMapping("/health-check")
+    public String healthCheck() {
+        return "OK";
     }
 
-    @PutMapping
-    public ResponseEntity<?> updateUser( @RequestBody User user){
+    @PostMapping("/create-user")
+    public boolean addUser(@RequestBody User user){
+        userService.saveEntry(user);
+        return true;
+    }
+
+    @DeleteMapping("/user")
+    public ResponseEntity<?> deleteUserById() {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String userName = authentication.getName();
-        User user1= userService.findByUsername(userName);
-
-
-        if(user1!=null){
-            user1.setUserName(user.getUserName());
-            user1.setPassword(user.getPassword());
-            userService.saveEntry(user1);
-        }
+        userRepository.deleteByUserName(authentication.getName());
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
+
     }
-
-
 
 }

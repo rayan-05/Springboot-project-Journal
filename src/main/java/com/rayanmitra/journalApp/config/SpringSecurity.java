@@ -34,7 +34,7 @@ public class SpringSecurity{
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/journal/**").authenticated()
+                        .requestMatchers("/journal/**", "/user/**").authenticated()
                         .anyRequest().permitAll()
                 )
                 .formLogin(form -> form

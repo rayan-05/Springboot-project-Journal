@@ -1,11 +1,9 @@
 package com.rayanmitra.journalApp.controller;
 
 
-import com.rayanmitra.journalApp.entity.JournalEntry;
 import com.rayanmitra.journalApp.entity.User;
 import com.rayanmitra.journalApp.repository.UserRepository;
 import com.rayanmitra.journalApp.service.UserService;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +28,7 @@ public class PublicController {
 
     @PostMapping("/create-user")
     public boolean addUser(@RequestBody User user){
-        userService.saveEntry(user);
+        userService.saveNewUser(user);
         return true;
     }
 

@@ -1,13 +1,14 @@
 package com.rayanmitra.journalApp;
 
-import org.junit.jupiter.api.Test;
+
+import org.junit.jupiter.api.Test; // Updated import
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JournalApplicationTests {
+public class JournalApplicationTests {
 
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 	}
 
 }

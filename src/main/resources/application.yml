@@ -1,18 +1,7 @@
-
 spring:
   application:
     name: Journal App
   data:
     mongodb:
-      uri: mongodb+srv://rayanmitra2021:B68p0awGE4He1cj5@cluster0.w8tvl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-      host: localhost
-      port: 27017
-      database: journaldb
+      uri: mongodb+srv://rayanmitra2021:ryan2003@cluster0.w8tvl.mongodb.net/journaldb?retryWrites=true&w=majority&appName=Cluster0
       auto-index-creation: true
-
-
-
-
-
-
-

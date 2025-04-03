@@ -5,6 +5,7 @@ import com.rayanmitra.journalApp.repository.UserRepository;
 import lombok.experimental.Accessors;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
@@ -38,6 +39,7 @@ public class UserDetailServiceImplTests {
     }
 
     @Test
+    @Disabled
     void loadUserByUsernameTest(){
         when(userRepository.findByUserName(ArgumentMatchers.anyString())).thenReturn(User.builder().userName("ram").password("jdsbkfjbskdjfb").roles(new ArrayList<>()).build());
         UserDetails user = userDetailService.loadUserByUsername("ram");

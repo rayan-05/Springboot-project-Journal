@@ -14,7 +14,10 @@
 	<name>Journal App</name>
 	<description>E2EE Journal App</description>
 	<properties>
-		<java.version>22</java.version> <!-- Updated to match runtime Java 22 -->
+		<java.version>17</java.version>
+		<sonar.organization>rayan-mitra</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
 	</properties>
 	<dependencies>
 		<!-- Core Spring Boot Web -->
@@ -52,17 +55,19 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>RELEASE</version>
+			<version>7.8.0</version> <!-- Fixed version instead of RELEASE -->
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
+			<version>5.12.0</version> <!-- Optional: explicit version -->
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-junit-jupiter</artifactId>
+			<version>5.12.0</version> <!-- Optional: explicit version -->
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -72,6 +77,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.9.1.2184</version>
 			</plugin>
 		</plugins>
 	</build>

@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test; // Updated import
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-@Disabled
 public class JournalApplicationTests {
 
 	@Test

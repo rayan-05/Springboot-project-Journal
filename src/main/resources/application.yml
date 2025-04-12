@@ -1,7 +1,26 @@
 spring:
-  profiles:
-    active: dev
+  application:
+    name: Journal App
+  data:
+    mongodb:
+      uri: mongodb+srv://rayanmitra2021:ryan2003@cluster0.w8tvl.mongodb.net/journaldb?retryWrites=true&w=majority&appName=Cluster0
+      auto-index-creation: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: rayan.mitra2021@vitstudent.ac.in
+    password: pqrh zlub wdjm rptz
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+server:
+  port: 8080
 
 
-
-
+weather:
+  api:
+    key: 9a15360aa6b78f6748e5d2ae3cc0a4cc

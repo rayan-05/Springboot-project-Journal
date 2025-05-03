@@ -3,8 +3,11 @@ spring:
     name: Journal App
   data:
     redis:
-      host: localhost
-      port: 6379
+      host: redis-17726.c305.ap-south-1-1.ec2.redns.redis-cloud.com
+      port: 17726
+      password: Tbm425rkURgNtqBKphVp0LHPuKtV7jeR
+#      uri: redis://default:Tbm425rkURgNtqBKphVp0LHPuKtV7jeR@redis-17726.c305.ap-south-1-1.ec2.redns.redis-cloud.com:17726
+
     mongodb:
       uri: mongodb+srv://rayanmitra2021:ryan2003@cluster0.w8tvl.mongodb.net/journaldb?retryWrites=true&w=majority&appName=Cluster0
       auto-index-creation: true

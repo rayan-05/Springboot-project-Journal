@@ -26,7 +26,7 @@ public class WeatherService {
 
     public WeatherResponse getWeather(String city) {
         WeatherResponse weatherResponse = redisService.get("weather_of_" + city, WeatherResponse.class);
-        if(weatherResponse == null) {
+        if(weatherResponse != null) {
             return weatherResponse;
         }
         else{

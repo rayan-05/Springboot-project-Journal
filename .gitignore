@@ -19,6 +19,7 @@ target/
 *.iml
 *.ipr
 
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -29,5 +30,11 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+
+
+
 ### VS Code ###
 .vscode/
+
+### Custom or Sensitive Files ###
+src/main/resources/application.yml

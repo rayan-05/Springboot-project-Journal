@@ -10,6 +10,7 @@ import com.rayanmitra.journalApp.repository.UserRepositoryImpl;
 import com.rayanmitra.journalApp.service.EmailService;
 import com.rayanmitra.journalApp.service.SentimentAnalysisService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -37,6 +38,9 @@ public class UserScheduler {
 
     @Autowired
     private AppCache appCache;
+
+    @Autowired
+    private KafkaTemplate<String, SentimentData> kafkaTemplate;
 
 
 //    @Scheduled(cron = "0 0 9 ? * SUN")
